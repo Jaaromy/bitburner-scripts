@@ -354,14 +354,14 @@ async function checkOnRunningScripts(ns, player) {
 		daemonArgs.push('--reserved-ram', 32 * (unlockedSFs[4] == 2 ? 4 : 16));
 
 	// Once stanek's gift is accepted, launch it once per reset (Note: stanek's gift is auto-purchased by faction-manager.js on your first install)
-	let stanekRunning = (13 in unlockedSFs) && findScript('stanek.js') !== undefined;
-	if ((13 in unlockedSFs) && installedAugmentations.includes(`Stanek's Gift - Genesis`) && !stanekLaunched && !stanekRunning) {
-		stanekLaunched = true; // Once we've know we've launched stanek once, we never have to again this reset.
-		const stanekArgs = ["--on-completion-script", getFilePath('daemon.js')]
-		if (daemonArgs.length >= 0) stanekArgs.push("--on-completion-script-args", JSON.stringify(daemonArgs)); // Pass in all the args we wanted to run daemon.js with
-		launchScriptHelper(ns, 'stanek.js', stanekArgs);
-		stanekRunning = true;
-	}
+	// let stanekRunning = (13 in unlockedSFs) && findScript('stanek.js') !== undefined;
+	// if ((13 in unlockedSFs) && installedAugmentations.includes(`Stanek's Gift - Genesis`) && !stanekLaunched && !stanekRunning) {
+	// 	stanekLaunched = true; // Once we've know we've launched stanek once, we never have to again this reset.
+	// 	const stanekArgs = ["--on-completion-script", getFilePath('daemon.js')]
+	// 	if (daemonArgs.length >= 0) stanekArgs.push("--on-completion-script-args", JSON.stringify(daemonArgs)); // Pass in all the args we wanted to run daemon.js with
+	// 	launchScriptHelper(ns, 'stanek.js', stanekArgs);
+	// 	stanekRunning = true;
+	// }
 
 	// Launch or re-launch daemon with the desired arguments (only if it wouldn't get in the way of stanek charging)
 	const daemon = findScript('daemon.js');

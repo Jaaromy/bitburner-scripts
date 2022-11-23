@@ -53,7 +53,7 @@ const argsSchema = [ // The set of all command line arguments
     ['disable-donations', false], // When displaying "obtainable" augs and prices, don't include augs that require a donation to meet their rep requirements
     ['purchase', false], // Set to true to pull the trigger on purchasing all desired augs in the order specified
     ['ignore-stocks', false], // Set to true to ignore the liquidation value of stocks currently held when running
-    ['ignore-stanek', false], // Set to true to ignore the fact that stanek is not yet taken before purchasing your first augs
+    ['ignore-stanek', true], // Set to true to ignore the fact that stanek is not yet taken before purchasing your first augs
     ['show-unavailable-aug-purchase-order', false], // Set to true to print the list of unavailable augmentations in optimal purchase order. (Note: Always displayed when no augs are available)
     ['show-all-purchase-lists', false], // Set to true to re-print the list of augmentations each time it changes
     // Display-related options - controls what information is displayed in the final "cumulative stats by faction" table
