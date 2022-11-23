@@ -354,7 +354,7 @@ async function checkOnRunningScripts(ns, player) {
 		daemonArgs.push('--reserved-ram', 32 * (unlockedSFs[4] == 2 ? 4 : 16));
 
 	// Once stanek's gift is accepted, launch it once per reset (Note: stanek's gift is auto-purchased by faction-manager.js on your first install)
-	// let stanekRunning = (13 in unlockedSFs) && findScript('stanek.js') !== undefined;
+	let stanekRunning = false; //(13 in unlockedSFs) && findScript('stanek.js') !== undefined;
 	// if ((13 in unlockedSFs) && installedAugmentations.includes(`Stanek's Gift - Genesis`) && !stanekLaunched && !stanekRunning) {
 	// 	stanekLaunched = true; // Once we've know we've launched stanek once, we never have to again this reset.
 	// 	const stanekArgs = ["--on-completion-script", getFilePath('daemon.js')]
